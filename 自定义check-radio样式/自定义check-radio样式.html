@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        input{
+            display: none;
+        }
+        label{
+            padding-left: 20px;
+            cursor: pointer;
+        }
+        label[for*="radio"] {
+            background: url(99322cf8c3283e42.png) no-repeat -22px -7px;
+        }
+        label[for*="radio"].checked {
+            background-position: -56px -7px;
+        }
+        label[for*="check"]{
+            background: url(99322cf8c3283e42.png) no-repeat -22px -29px;
+        }
+        label[for*="check"].checked{
+            background-position: -56px -29px;
+        }
+    </style>
+</head>
+<body>
+    <label for="radiobtn1" class="checked"></label>
+    <input type="radio" name="radiobutton" id="radiobtn1" checked>
+
+    <label for="radiobtn2"></label>
+    <input type="radio" name="radiobutton" id="radiobtn2">
+
+    <label for="checkbtn3" class="checked"></label>
+    <input type="checkbox" name="checkbutton" id="checkbtn3" checked>
+
+    <label for="checkbtn4"></label>
+    <input type="checkbox" name="checkbutton" id="checkbtn4">
+    <script type="text/javascript">
+        let checkboxLables = document.querySelectorAll('[for*=check]');
+        Array.prototype.forEach.call(checkboxLables, (label) => {
+            label.addEventListener('click', (event) => {
+                let target = event.target || event.srcElement;
+                target.className = target.className == 'checked' ? '' : 'checked';
+            })
+        })
+        let beforeIndex = 0;
+        let radioboxLabel = document.querySelectorAll('[for*=radio]');
+        Array.prototype.forEach.call(radioboxLabel, (label, index, labels) => {
+            label.addEventListener('click', (event) => {
+                if(index != beforeIndex){
+                    labels[beforeIndex].className = '';
+                    beforeIndex = index;
+                }
+                label.className = 'checked';
+            })
+        })
+    </script>
+</body>
+</html>
