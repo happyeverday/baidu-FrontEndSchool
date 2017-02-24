@@ -3,32 +3,53 @@
 <head>
     <title></title>
     <style type="text/css">
+        *{
+            box-sizing: border-box;
+        }
         input{
             opacity: 0;
         }
-        label{
-            position: relative;
+        label::before, label:after{
+            content: '';
+            display: inline-block;
+            cursor: pointer;
         }
         label::before{
-            content: '';
-            position: absolute;
-            left: -20px;
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-            background: url(99322cf8c3283e42.png) no-repeat
+            width: 16px;
+            height: 16px;
         }
-        input[type="radio"] + label::before{
-            background-position: -22px -7px;
+        label::after{
+            width: 10px;
+            height: 10px;
+            position: relative;
+            left: -14px;
+            top: -4px;
         }
-        input[type="radio"]:checked + label::before{
-            background-position: -56px -7px;
+        label::before{
+            border: 1px solid grey;
+            border-radius: 50%;
         }
+        label::after{
+            background-color: grey;
+            border-radius: 50%;
+        }
+        input:checked + label::after{
+            background-color: red;
+        }
+        input:checked + label::before, input[type="checkbox"]:checked + label::after{
+            border-color: red;
+        }
+
         input[type="checkbox"] + label::before{
-            background-position: -22px -29px;
+            border-radius: 0;
         }
-        input[type="checkbox"]:checked + label::before{
-            background-position: -56px -29px;
+        input[type="checkbox"] + label::after{
+            width: 6px;
+            background-color: transparent;
+            border-bottom: 1px solid grey;
+            border-right: 1px solid grey;
+            border-radius: 0;
+            transform: rotate(35deg) scale(0.8);
         }
     </style>
 </head>
