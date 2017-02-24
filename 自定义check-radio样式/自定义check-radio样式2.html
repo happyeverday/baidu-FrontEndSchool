@@ -4,44 +4,35 @@
     <title></title>
     <style type="text/css">
         input{
-            opacity: 0;
-        }
-        label{
-            position: relative;
-        }
-        label::before{
-            content: '';
-            position: absolute;
-            left: -20px;
+            appearance: none;
+            -webkit-appearance: none;
             width: 20px;
             height: 20px;
+            margin: 0;
+            border: 0;
             cursor: pointer;
-            background: url(99322cf8c3283e42.png) no-repeat
+            background: url(99322cf8c3283e42.png) no-repeat;
         }
-        input[type="radio"] + label::before{
+        input[type="radio"]{
             background-position: -22px -7px;
         }
-        input[type="radio"]:checked + label::before{
+        input[type="radio"]:checked{
             background-position: -56px -7px;
         }
-        input[type="checkbox"] + label::before{
+        input[type="checkbox"]{
             background-position: -22px -29px;
         }
-        input[type="checkbox"]:checked + label::before{
+        input[type="checkbox"]:checked{
             background-position: -56px -29px;
         }
     </style>
 </head>
 <body>
     <input type="radio" name="radiobutton" id="radiobtn1">
-    <label for="radiobtn1"></label>
 
     <input type="radio" name="radiobutton" id="radiobtn2">
-    <label for="radiobtn2"></label>
 
     <input type="checkbox" name="checkbutton" id="checkbtn3">
-    <label for="checkbtn3"></label>
 
     <input type="checkbox" name="checkbutton" id="checkbtn4">
-    <label for="checkbtn4"></label>
 </html>
