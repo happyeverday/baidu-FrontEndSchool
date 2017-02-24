@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        *{
+            box-sizing: border-box;
+        }
+        #menu{
+            border: 1px solid grey;
+        }
+        #myMenu{
+            border: 1px solid grey;
+            position: absolute;
+            display: none;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false">
+    <div id="menu">
+        点我查看菜单
+        <ul id="myMenu">
+            <li>1</li>
+            <li>2</li>
+        </ul>
+    </div>
+    不可点击区域
+</body>
+    <script type="text/javascript">
+        document.body.oncontextmenu=function(event){
+            let target = event.target || event.srcElement;
+            if(target.id == 'menu'){
+                let x = event.x || event.pageX, y = event.y || event.pageY;
+                let myMenu = document.getElementById('myMenu');
+                if(x + myMenu.clientWidth > window.innerWidth){
+                    x -= myMenu.clientWidth;//超出右边
+                }
+                if(y + myMenu.clientHeight > window.innerHeight){
+                    y -= myMenu.clientHeight;
+                }
+                myMenu.style.display = "block";
+                myMenu.style.left = x+ 'px';
+                myMenu.style.top = y + 'px';
+                console.log(myMenu.style.clientLeft, myMenu.style.clientTop)
+            }
+            else{
+                document.getElementById('myMenu').style.display = 'none';
+            }
+            return false;
+        }
+    </script>
+</html>
