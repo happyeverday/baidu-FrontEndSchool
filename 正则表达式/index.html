@@ -24,7 +24,7 @@
             });
             checkWords.addEventListener('click', (event) => {
                 let words = document.querySelector('#words').value,
-                    isWord = /\b(\w+)\b\s+(\1)/;
+                    isWord = /\b(\w+)\b\s+(\1)\b/;
                 if(isWord.test(words)){
                     alert('输入包含连续单词')
                 }
