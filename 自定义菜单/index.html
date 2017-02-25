@@ -5,14 +5,28 @@
     <style type="text/css">
         *{
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
         #menu{
-            border: 1px solid grey;
+            background-color: rgb(245, 245, 245);
+            border: 1px solid rgb(227, 227, 227);
+            border-radius: 5px;
         }
         #myMenu{
-            border: 1px solid grey;
             position: absolute;
             display: none;
+            background-color: #fff;
+            border: 1px solid rgb(208, 208, 208);
+            border-radius: 5px;
+            margin: 0;
+            line-height: 30px;
+            list-style: none;
+            text-align: center;
+        }
+        #myMenu > li{
+            height: 30px;
+            width: 30px;
         }
     </style>
 </head>
@@ -41,12 +55,16 @@
                 myMenu.style.display = "block";
                 myMenu.style.left = x+ 'px';
                 myMenu.style.top = y + 'px';
-                console.log(myMenu.style.clientLeft, myMenu.style.clientTop)
             }
             else{
                 document.getElementById('myMenu').style.display = 'none';
             }
             return false;
+        }
+        document.body.onclick = function(event){
+            if(event.button != 2){
+                document.getElementById('myMenu').style.display = 'none';
+            }
         }
     </script>
 </html>
