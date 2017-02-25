@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <input type="number" name="" id="phonenum">
+    <button id="checkPhone">测试电话号</button>
+    <input type="text" name="" id="words">
+    <button id="checkWords">测试相邻相等单词</button>
+    <script type="text/javascript">
+        window.onload = function(){
+            let checkPhone = document.querySelector('#checkPhone'),
+                checkWords = document.querySelector('#checkWords');
+            checkPhone.addEventListener('click', (event) => {
+                let phonenum = document.querySelector('#phonenum').value,
+                    isPhoneNum = /^1\d{10}$/;
+                if(isPhoneNum.test(phonenum)){
+                    alert('输入是电话号码')
+                }
+                else{
+                    alert('输入错误')
+                }
+            });
+            checkWords.addEventListener('click', (event) => {
+                let words = document.querySelector('#words').value,
+                    isWord = /\b(\w+)\b\s+(\1)/;
+                if(isWord.test(words)){
+                    alert('输入包含连续单词')
+                }
+                else{
+                    alert('输入错误')
+                }
+            })
+        }
+    </script>
+</body>
+</html>
