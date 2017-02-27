@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>flex实现</title>
+    <style type="text/css">
+        #team, #teamInfo, #teamDetail, #teamPictures{
+            border: 1px solid #999;
+            padding: 20px;
+            background-color: white;
+        }
+        #team{
+            display: flex;
+            align-items: flex-start;
+             background-color: #eee;
+        }
+        #teamInfo{
+            width: 200px;
+        }
+        #teamLogo{
+            width: 80px;
+            vertical-align: top;
+        }
+        #teamTitle{
+            float: right;
+        }
+        #teamDetail{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        #teamPictures{
+            width: 120px;
+        }
+        .memberPicture{
+            display: block;
+            width: 80px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="team">
+        <div id="teamInfo">
+            <img src="timg (1).jpeg" id="teamLogo">
+            <span id="teamTitle">知浅</span>
+        </div>
+        <div id="teamDetail">
+            来自北京邮电大学，喜欢前端，热爱coding，立志于做一名程序猿
+            来自北京邮电大学，喜欢前端，热爱coding，立志于做一名程序猿
+            来自北京邮电大学，喜欢前端，热爱coding，立志于做一名程序猿
+        </div>
+        <div id="teamPictures">
+            <img src="timg (1).jpeg" class="memberPicture">
+            <img src="timg (1).jpeg" class="memberPicture">
+            <img src="timg (1).jpeg" class="memberPicture">
+            <img src="timg (1).jpeg" class="memberPicture">
+        </div>
+    </div>
+</body>
+</html>
