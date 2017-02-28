@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        body{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        div{
+            width: 150px;
+            padding: 20px;
+            border: 1px solid #f00;
+        }
+        #div1{
+            height: 120px;
+        }
+        #div2{
+            height: 100px;
+        }
+        #div3{
+            height: 40px;
+        }
+        #div4{
+            border-color: #0f0;
+            height: 200px;
+        }
+        @media  (max-width: 640px){
+            #div4{
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+</body>
+</html>
