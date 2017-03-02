@@ -1,20 +1,20 @@
-function Event(){
-    this.handlers = {}
-}
-Event.prototype = {
-    constructor: Event,
-    on: function(eventType, handler){
+class Event{
+    constructor(){
+        this.handlers = {};
+    }
+    on(key, handler){
         var self = this;
-        if(!(eventType in self.handlers)){
-            self.handlers[eventType] = []
+        if(!(key in self.handlers)){
+            self.handlers[key] = []
         }
-        self.handlers[eventType].push(handler)
+        self.handlers[key].push(handler)
         return this;
-    },
-    emit: function(eventType, ...args){
+    }
+    emit(key, ...args){
         let self = this;
-        for(let i = 0;i < self.handlers[eventType].length;i++){
-            self.handlers[eventType][i].apply(self, args);
+        if(!self.handlers[key]) return;
+        for(let handler of self.handlers[key]){
+            handler.apply(self, args)
         }
     }
 }
